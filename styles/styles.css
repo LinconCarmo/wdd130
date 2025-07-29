@@ -1,57 +1,76 @@
-nav{
-background-color: darkblue;
-padding: 10px;
+/* Variáveis globais */
+:root {
+  --cor-primaria: darkblue;
+  --cor-texto-claro: white;
+  --cor-texto-escuro: #333;
+  --cor-fundo-aside: #eee;
+  --borda-padrao: 1px solid black;
+  --borda-leve: 1px solid rgb(0 0 0 / 0.2);
+  --borda-footer: 1px solid #000;
+  --padding-pequeno: 2px;
+  --padding-medio: 10px;
+  --padding-grande: 20px;
+  --padding-aside: 1rem;
+  --margem-aside: 1rem;
+  --largura-max-main: 840px;
+  --largura-aside: 20rem;
+  --largura-imagem: 150px;
+  --sombra: 0 0 30px gray;
 }
 
-nav a{
-    color: white;
-    display: block;
-    padding: 20px;
+nav {
+  background-color: var(--cor-primaria);
+  padding: var(--padding-medio);
 }
 
-h1{
-    color: darkblue;
+nav a {
+  color: var(--cor-texto-claro);
+  display: block;
+  padding: var(--padding-grande);
 }
 
-
-img{
-    width: 150px;
-    height: auto;
-    border: 1px solid black;
-    padding: 2px;
-    box-shadow: 0 0 30px gray;
+h1 {
+  color: var(--cor-primaria);
 }
 
-p{
-    padding: 0px;
+img {
+  width: var(--largura-imagem);
+  height: auto;
+  border: var(--borda-padrao);
+  padding: var(--padding-pequeno);
+  box-shadow: var(--sombra);
 }
 
-main{
-    max-width: 840px;
+p {
+  padding: 0;
 }
 
-aside{
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0/0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;   
+main {
+  max-width: var(--largura-max-main);
 }
 
-aside img{
-    width: 150;
-    height: auto;
+aside {
+  width: var(--largura-aside);
+  margin: var(--margem-aside);
+  border: var(--borda-leve);
+  padding: var(--padding-aside);
+  background-color: var(--cor-fundo-aside);
+  color: var(--cor-texto-escuro);
+  text-align: center;   
 }
 
-main img{
-    width: 150px;
-    height: auto;
+aside img {
+  width: var(--largura-imagem);
+  height: auto;
 }
 
-footer{
-    margin-top: 15px;
-    border-top: 1px solid #000 ;
-    text-align: center;
+main img {
+  width: var(--largura-imagem);
+  height: auto;
+}
+
+footer {
+  margin-top: 15px;
+  border-top: var(--borda-footer);
+  text-align: center;
 }
