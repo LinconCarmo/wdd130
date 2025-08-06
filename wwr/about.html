@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn more about our white water rafting company, its mission, and its history.">
-  <meta name="author" content="Lincon Eduardo do Carmo">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Learn more about our white water rafting company, its mission, and its history." />
+  <meta name="author" content="Lincon Eduardo do Carmo" />
   <title>About Us - White Water Rafting</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles/rafting.css">
+  <link rel="stylesheet" href="styles/rafting.css" />
 </head>
+
 <body>
   <header>
-    <img src="images/wwr-logo.png" alt="Rafting Company Logo">
+    <img src="images/wwr-logo.png" alt="Rafting Company Logo" />
+    <h1>Rafting Company</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="trips.html">Trips</a>
-      <a href="contact.html">Contact Us</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About Us</a></li>
+        <li><a href="trips.html">Trips</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <div class="hero">
-      <img src="images/hero.jpg" alt="Hero Background">
-      <h1>Rafting Company</h1>
-      <article>
-        <img src="images/happyness.jpg" alt="Happy Employee">
-        <p>
-          Our rafting company offers fun and safe trips down the river. We provide all the gear and friendly guides so people can enjoy nature and have a great time in the water.
-        </p>
-      </article>
-    </div>
-
-    <section>
+    <section class="history">
       <h2>History</h2>
-      <p>We started with a small team who loved rivers and nature. Over the years, we grew and helped many people enjoy rafting in a fun and simple way.</p>
+      <p>
+        We started with a small team who loved rivers and nature. Over the years, we
+        grew and helped many people enjoy rafting in a fun and simple way.
+      </p>
     </section>
 
-    <section>
+    <section class="adventure">
       <h2>Adventure Awaits You!</h2>
-      <img src="images/first.jpg" alt="Against the waters">
-      <img src="images/second-top.jpg" alt="From the top">
-      <img src="images/third-orange.jpg" alt="Orange boat">
-      <img src="images/fourth-blue.jpg" alt="Blue boat">
-      <img src="images/fith-orangetop.jpg" alt="Orange boat from the top view">
+      <div class="adventure-gallery">
+        <figure>
+          <img src="images/first.jpg" alt="Against the waters" />
+          <figcaption>Los Dientes del Diablo</figcaption>
+        </figure>
+        <figure>
+          <img src="images/second-top.jpg" alt="From the top" />
+          <figcaption>Big Mallard</figcaption>
+        </figure>
+        <figure>
+          <img src="images/third-orange.jpg" alt="Orange boat" />
+          <figcaption>Half Day Adventure</figcaption>
+        </figure>
+        <figure>
+          <img src="images/fourth-blue.jpg" alt="Blue boat" />
+          <figcaption>Rapid Splash</figcaption>
+        </figure>
+        <figure>
+          <img src="images/fith-orangetop.jpg" alt="Orange boat from the top view" />
+          <figcaption>River Cruise</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Rafting Company -- Lincon Eduardo do Carmo-- </p>
-    <nav class="socialmedia">
-      <a href="https://facebook.com">
-        <img src="images/facebook.svg" alt="Facebook">
+    <p>© 2025 Rafting Company -- Lincon Eduardo do Carmo --</p>
+    <nav class="socialmedia" aria-label="Social Media Links">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="images/facebook.svg" alt="Facebook" />
       </a>
-      <a href="https://twitter.com">
-        <img src="images/twitter.svg" alt="Twitter">
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <img src="images/twitter.svg" alt="Twitter" />
       </a>
-      <a href="https://instagram.com">
-        <img src="images/instagram.svg" alt="Instagram">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="images/instagram.svg" alt="Instagram" />
       </a>
     </nav>
   </footer>
