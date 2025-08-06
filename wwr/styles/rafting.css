@@ -8,7 +8,7 @@
   --body-font: "Open Sans", sans-serif;
 }
 
-/* Basic reset */
+
 *,
 *::before,
 *::after {
@@ -84,7 +84,7 @@ nav ul li a[aria-current="page"] {
   outline: none;
 }
 
-/* MAIN */
+
 
 /* History Section */
 .history {
