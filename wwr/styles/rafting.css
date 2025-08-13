@@ -1,4 +1,15 @@
-/* Colors and fonts used on the site */
+/*
+  =====================================================================
+  COMPLETE CSS CODE FOR THE RAFTING WEBSITE
+  Organized by sections for easy identification
+  =====================================================================
+*/
+
+/* ------------------------------------------------------------------ */
+/* --- Section 1: Global Settings (Apply to all pages) --- */
+/* ------------------------------------------------------------------ */
+
+/* Colors and fonts used on the website */
 :root {
   --primary-color: #182825;
   --secondary-color: #016fb9;
@@ -8,14 +19,14 @@
   --body-font: "Open Sans", sans-serif;
 }
 
-/* Make sure padding and borders don’t mess up sizing */
+/* Ensures padding and borders don't mess up sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Basic page setup: no margin, set font and background */
+/* Basic page setup: no margin, sets font and background */
 body {
   margin: 0;
   font-family: var(--body-font);
@@ -24,7 +35,7 @@ body {
   line-height: 1.5;
 }
 
-/* Center main containers with some padding */
+/* Centers main containers with some padding */
 header,
 main,
 footer {
@@ -33,47 +44,33 @@ footer {
   padding: 0 16px;
 }
 
-/* Header uses grid: logo, title, and nav spaced out */
+/* Header styling */
 header {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* logo - title - nav */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
   background-color: var(--primary-color);
   padding: 12px 16px;
   color: var(--accent2-color);
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
-/* Logo image height fixed */
-header img {
+/* Logo styling */
+header .logo {
   height: 50px;
   width: auto;
-  justify-self: start;
 }
 
-/* Title style */
-header h1 {
-  font-family: var(--heading-font);
-  color: var(--accent1-color);
-  font-size: 1.8rem;
-  margin: 0;
-  justify-self: center;
-}
-
-/* Navigation menu as a horizontal row */
-nav ul {
-  list-style: none; /* remove bullets */
+/* Navigation styling */
+header nav {
   display: flex;
   gap: 20px;
-  justify-self: end;
-  padding-left: 0;
-  margin: 0;
 }
 
-/* Links styling */
-nav ul li a {
+/* Navigation links */
+header nav a {
   color: var(--accent2-color);
-  text-decoration: none; /* no underline */
+  text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 4px 8px;
@@ -81,16 +78,356 @@ nav ul li a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover, focus, and current page link effects */
-nav ul li a:hover,
-nav ul li a:focus,
-nav ul li a[aria-current="page"] {
+/* Link effects on focus, hover, and current page */
+header nav a:hover,
+header nav a:focus,
+header nav a[aria-current="page"] {
   background-color: var(--accent1-color);
   color: white;
   outline: none;
 }
 
-/* History section with white background and shadow */
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: 600;
+  gap: 10px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Social media icons */
+.socialmedia img {
+    height: 32px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
+
+footer nav {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+footer nav a {
+  color: var(--accent2-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer nav a:hover {
+  color: var(--accent1-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* --- Section 2: Home Page Styles (index.html) --- */
+/* ------------------------------------------------------------------ */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(60%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-family: var(--heading-font);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Newsletter Section */
+.newsletter {
+  background-color: var(--accent1-color);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.newsletter h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.newsletter label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.newsletter button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Call to Action */
+.call-to-action {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.call-to-action h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.call-to-action p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent1-color);
+}
+
+/* Information Grid Section */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.info-grid div {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.info-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.info-grid h3 {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.info-grid p {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* --- Section 3: Trips Page Styles (trips.html) --- */
+/* ------------------------------------------------------------------ */
+
+/* Specific hero section for the trips page */
+.hero-text h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Call to Action Section on the Trips Page */
+.call-to-action-trips {
+  text-align: center;
+  margin: 40px 0;
+  padding: 30px;
+  background: var(--accent1-color);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action-trips h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.call-to-action-trips p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.call-to-action-trips .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action-trips .btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Trip Descriptions Section */
+.trip-descriptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.trip-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 4px solid var(--accent2-color);
+}
+
+.trip-card h3 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  padding: 15px 20px 0;
+  color: var(--secondary-color);
+}
+
+.trip-card p {
+  font-size: 1.1rem;
+  padding: 0 20px 20px;
+  color: var(--primary-color);
+}
+
+/* Trips Table Section */
+.trips-table-container {
+  margin: 40px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trips-table-container h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+table thead {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- Section 4: "About Us" Page Styles (about.html) --- */
+/* ------------------------------------------------------------------ */
+
+/* History Section */
 .history {
   margin: 40px 0;
   padding: 16px;
@@ -99,7 +436,6 @@ nav ul li a[aria-current="page"] {
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
 }
 
-/* History title */
 .history h2 {
   font-family: var(--heading-font);
   font-size: 2rem;
@@ -107,18 +443,16 @@ nav ul li a[aria-current="page"] {
   margin-bottom: 12px;
 }
 
-/* History paragraph text */
 .history p {
   font-size: 1.1rem;
   color: var(--primary-color);
 }
 
-/* Adventure section spacing */
+/* Adventure Section */
 .adventure {
   margin-bottom: 40px;
 }
 
-/* Adventure title */
 .adventure h2 {
   font-family: var(--heading-font);
   font-size: 2rem;
@@ -133,7 +467,6 @@ nav ul li a[aria-current="page"] {
   gap: 16px;
 }
 
-/* Each photo has white background, rounded corners, and shadow */
 .adventure-gallery figure {
   background: white;
   border-radius: 8px;
@@ -143,7 +476,6 @@ nav ul li a[aria-current="page"] {
   padding-bottom: 8px;
 }
 
-/* Images fill their container and have fixed height */
 .adventure-gallery img {
   width: 100%;
   height: 220px;
@@ -152,7 +484,6 @@ nav ul li a[aria-current="page"] {
   border-bottom: 2px solid var(--accent1-color);
 }
 
-/* Caption below each image */
 .adventure-gallery figcaption {
   font-family: var(--body-font);
   font-weight: 600;
@@ -161,61 +492,11 @@ nav ul li a[aria-current="page"] {
   color: var(--primary-color);
 }
 
-/* Footer background and layout */
-footer {
-  background-color: var(--primary-color);
-  color: var(--accent2-color);
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  font-weight: 600;
-}
-
-/* Footer paragraph style */
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* Social media icons container */
-.socialmedia {
-  display: flex;
-  gap: 16px;
-  justify-content: flex-end;
-  flex: 1 1 auto;
-}
-
-/* Social media links size */
-.socialmedia a {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-}
-
-/* Social media icons fill their links */
-.socialmedia img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0.8);
-  transition: filter 0.3s ease;
-}
-
-/* Highlight icons on hover/focus */
-.socialmedia a:hover img,
-.socialmedia a:focus img {
-  filter: brightness(1) drop-shadow(0 0 5px var(--accent1-color));
-  outline: none;
-}
-
-
 /* ------------------------------------------------------------------ */
-/* --- New CSS rules for the contact.html page (added here) --- */
+/* --- Section 5: Contact Page Styles (contact.html) --- */
 /* ------------------------------------------------------------------ */
 
-/* Contact Information Section */
+/* Contact Info Section */
 .contact-info {
   margin: 40px 0;
   padding: 16px;
@@ -236,7 +517,7 @@ footer p {
   color: var(--primary-color);
 }
 
-/* Styling for the Google Maps iframe */
+/* Google Maps iframe style */
 .google-map {
   width: 100%;
   height: 400px;
@@ -259,7 +540,7 @@ footer p {
   text-align: center;
 }
 
-/* Team Photo Gallery */
+/* Team photo gallery */
 .team-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -339,7 +620,7 @@ footer p {
   outline: none;
 }
 
-/* Styling for the fieldset (radio buttons) */
+/* Fieldset styling (radio buttons) */
 .contact-form fieldset {
   border: 1px solid var(--accent2-color);
   border-radius: 6px;
@@ -353,7 +634,7 @@ footer p {
   padding: 0 8px;
 }
 
-/* Styling for the submit button */
+/* Submit button styling */
 .btn-submit {
   background-color: var(--secondary-color);
   color: white;
@@ -370,7 +651,7 @@ footer p {
   background-color: var(--accent1-color);
 }
 
-/* Styling for the wireframe link in the footer */
+/* Style for the wireframe link in the footer */
 footer p a {
   color: var(--accent1-color);
   text-decoration: underline;
@@ -382,54 +663,79 @@ footer p a:hover {
 }
 
 /* ------------------------------------------------------------------ */
-/* --- Media Queries (layout adjustments for smaller screens) --- */
+/* --- Section 6: Media Queries (Layout adjustments for smaller screens) --- */
 /* ------------------------------------------------------------------ */
 
-/* Responsive design for tablets and smaller screens */
 @media (max-width: 768px) {
   header {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 8px;
-    padding: 16px;
+    flex-direction: column;
+    text-align: center;
   }
 
-  header img {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  header nav {
+    justify-content: center;
+    margin-top: 10px;
   }
-
-  header h1 {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    justify-self: start;
-    font-size: 1.5rem;
-  }
-
-  nav {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    justify-self: start;
-    width: 100%;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* Makes the adventure and team galleries have 2 columns on smaller screens */
+  
+  /* Makes adventure and team galleries have 2 columns on smaller screens */
   .adventure-gallery,
-  .team-gallery {
+  .team-gallery,
+  .info-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Adjusts the table for smaller screens */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
 }
 
-/* On very small screens, the galleries show just one column */
+/* On very small screens, galleries show only one column */
 @media (max-width: 480px) {
   .adventure-gallery,
-  .team-gallery {
+  .team-gallery,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 }
